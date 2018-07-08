@@ -1,4 +1,4 @@
-FROM lsiobase/alpine.armhf
+FROM lsiobase/alpine.armhf:latest
 
 LABEL maintainer="ourweijiang@gmail.com"
 
