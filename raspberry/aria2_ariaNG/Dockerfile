@@ -2,8 +2,8 @@ FROM lsiobase/alpine.armhf
 
 LABEL maintainer="ourweijiang@gmail.com"
 
-RUN apk update && \
-    apk add bash
+RUN apk update
+RUN apk add bash
 
 RUN mkdir -p /conf && \
     mkdir -p /conf-copy && \
