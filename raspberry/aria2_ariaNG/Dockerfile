@@ -1,13 +1,14 @@
 FROM lsiobase/alpine.armhf
-MAINTAINER Null_Ying <ourweijiang@gmail.com>
+
+LABEL maintainer="ourweijiang@gmail.com"
 
 RUN apk update && \
-    apk add --no-cache --update bash && \
+    apk add bash
 
 RUN mkdir -p /conf && \
     mkdir -p /conf-copy && \
     mkdir -p /data && \
-    apk add --no-cache --update aria2
+    apk add aria2
 
 ADD files/start.sh /conf-copy/start.sh
 ADD files/aria2.conf /conf-copy/aria2.conf
