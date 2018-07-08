@@ -2,13 +2,13 @@ FROM lsiobase/alpine.armhf:latest
 
 LABEL maintainer="ourweijiang@gmail.com"
 
-RUN apk update
-RUN apk add bash
+RUN /bin/apk update
+RUN /bin/apk add bash
 
 RUN mkdir -p /conf && \
     mkdir -p /conf-copy && \
     mkdir -p /data && \
-    apk add aria2
+    /bin/apk add aria2
 
 ADD files/start.sh /conf-copy/start.sh
 ADD files/aria2.conf /conf-copy/aria2.conf
