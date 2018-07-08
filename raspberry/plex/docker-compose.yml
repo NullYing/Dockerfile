@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  plex:
+    container_name: plex
+    image: lsioarmhf/plex
+    network_mode: host
+    volumes:
+      - "./config:/config"
+      - "./tvshows:/tvshows"
+      - "/home/pi/aria2/data:/movies"
+      - "./transcode:/transcode"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ="Asia/Chongqing"
+      - PLEX_CLAIM="claim-XXX"
+    restart: always
