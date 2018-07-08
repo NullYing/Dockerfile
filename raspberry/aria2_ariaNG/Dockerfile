@@ -1,9 +1,10 @@
 FROM lsiobase/alpine.armhf
-MAINTAINER xujinkai <jack777@xujinkai.net>
+MAINTAINER Null_Ying <ourweijiang@gmail.com>
 
 RUN apk update && \
     apk add --no-cache --update bash && \
-    mkdir -p /conf && \
+
+RUN mkdir -p /conf && \
     mkdir -p /conf-copy && \
     mkdir -p /data && \
     apk add --no-cache --update aria2
