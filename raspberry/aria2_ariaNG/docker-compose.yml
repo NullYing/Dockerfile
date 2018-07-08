@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+  aria2:
+    container_name: aria2
+    build: .
+    ports:
+      - "6800:6800"
+      - "6802:6802"
+      - "6802:6802/udp"
+      - "6881:6881"
+      - "6881:6881/udp"
+    volumes:
+      - "./data:/data"
+      - "./conf:/conf"
+    environment:
+      - SECRET=e6c3778f-6361-4ed0-b126-f2cf8fca06db
+    restart: always
+
+  httpd:
+    # AriaNg 0.4.0
+    image: busybox
+    volumes:
+        - ./web:/usr/html
+    ports:
+        - "81:80"
+    command: /bin/busybox httpd -f -p 80 -h /usr/html
