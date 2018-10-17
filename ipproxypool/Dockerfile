@@ -8,7 +8,7 @@ apk del tzdata
 
 EXPOSE 8000
 
-RUN apk add --no-cache --update python2 python2-dev linux-headers musl musl-dev gcc py2-pip py2-lxml sqlite git ;\
+RUN apk add --no-cache --update python2 python2-dev linux-headers musl musl-dev gcc py2-pip py2-lxml sqlite git libxml2-dev libxslt libxslt-dev;\
 	pip install --upgrade pip && \
 	pip install requests chardet web.py sqlalchemy gevent psutil ;
 
