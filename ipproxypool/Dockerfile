@@ -11,7 +11,6 @@ EXPOSE 8000
 RUN apk add --no-cache --update python2 python2-dev linux-headers musl musl-dev gcc py2-pip py2-lxml sqlite git ;\
 	pip install --upgrade pip && \
 	pip install requests chardet web.py sqlalchemy gevent psutil ;\
-	apk del gcc python2-dev
 
 #克隆代理池源码
 RUN git clone https://github.com/qiyeboy/IPProxyPool.git && \
