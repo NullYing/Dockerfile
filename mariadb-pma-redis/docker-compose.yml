@@ -1,0 +1,37 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mariadb
+    container_name: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: "MYSQLPASSWORD"
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./log:/var/log/mysql
+    # - ./conf:/etc/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+     - PMA_HOST=database
+     - PMA_USER=root
+     - PMA_PASSWORD="MYSQLPASSWORD"
+    ports:
+    - 8080:80
+    volumes:
+     - /sessions
+    links:
+      - "db:database"
+  redis:
+      container_name: redis
+      build: ./redis
+      ports:
+       - "6379:6379"
+      volumes:
+        - ./redis:/data
+      command: redis-server /data/redis.conf
+      privileged: true
