@@ -1,0 +1,16 @@
+version: "3"
+services:
+    shadowsocks:
+      container_name: shadowsocks
+      build: .
+      ports:
+       - "1088:1088"
+       - "1088:1088/udp"
+       - "2018:2018"
+       - "2018:2018/udp"
+      environment:
+       - SS_MODULE=ss-local
+       - SS_CONFIG=-s 127.0.0.1 -p 2018 -b 0.0.0.0 -l 1088 -m chacha20 -k 密码 -v --fast-open --mptcp -6
+       - KCP_FLAG=true
+       - KCP_MODULE=kcpclient
+       - KCP_CONFIG=-r 服务器地址:2019 -l :2018 -mode fast2 --key 密码 --crypt aes
