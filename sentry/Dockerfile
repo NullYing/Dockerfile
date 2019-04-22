@@ -5,10 +5,7 @@ WORKDIR /usr/src/sentry
 # Add WORKDIR to PYTHONPATH so local python files don't need to be installed
 ENV PYTHONPATH /usr/src/sentry
 
-RUN echo "deb http://mirrors.aliyun.com/debian/ jessie main non-free contrib" > /etc/apt/sources.list && \
-    echo "deb http://mirrors.aliyun.com/debian/ jessie-proposed-updates main non-free contrib" >> /etc/apt/sources.list && \
-    echo "deb-src http://mirrors.aliyun.com/debian/ jessie main non-free contrib" >> /etc/apt/sources.list && \
-    echo "deb-src http://mirrors.aliyun.com/debian/ jessie-proposed-updates main non-free contrib" >> /etc/apt/sources.list
+RUN sed -i "s/deb.debian.org/mirrors.aliyun.com/g" /etc/apt/sources.list && sed -i "s/security.debian.org/mirrors.aliyun.com/g" /etc/apt/sources.list
 
 RUN apt-get update && apt-get install -y libsasl2-dev python-dev libldap2-dev libssl-dev
 
