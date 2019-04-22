@@ -7,14 +7,14 @@
 # Mail Server #
 ###############
 
-mail.backend: 'smtp'  # Use dummy if you want to disable email entirely
-mail.host: 'smtp.exmail.qq.com'
-mail.port: 587
-mail.username: ''
-mail.password: ''
-mail.use-tls: true
+# mail.backend: 'smtp'  # Use dummy if you want to disable email entirely
+# mail.host: 'smtp.exmail.qq.com'
+# mail.port: 587
+# mail.username: ''
+# mail.password: ''
+# mail.use-tls: true
 # The email address to send on behalf of
-mail.from: ''
+# mail.from: ''
 
 # If you'd like to configure email replies, enable this.
 # mail.enable-replies: false
