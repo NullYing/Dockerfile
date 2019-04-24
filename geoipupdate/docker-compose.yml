@@ -1,0 +1,7 @@
+version: '3.4'
+
+services:
+  geoipupdate:
+      build: .
+      volumes:
+          - ./GeoIP:/usr/local/share/GeoIP
