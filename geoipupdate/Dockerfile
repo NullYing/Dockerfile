@@ -26,4 +26,4 @@ RUN mv /tmp/geoipupdate_${GEOIP_UPDATE_VERSION}_linux_amd64/GeoIP.conf /etc && \
     chmod -R 777 /usr/bin/geoipupdate && \
     mkdir /usr/local/share/GeoIP
 
-CMD geoipupdate -f ${GEOIP_CONF_FILE}
+CMD geoipupdate -f ${GEOIP_CONF_FILE} -v
