@@ -19,7 +19,7 @@ services:
     environment:
      - PMA_HOST=database
      - PMA_USER=root
-     - PMA_PASSWORD="MYSQLPASSWORD"
+     - PMA_PASSWORD=MYSQLPASSWORD
     ports:
     - 8080:80
     volumes:
